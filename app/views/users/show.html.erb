@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p><%= @some_text %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+
+  <strong>Email:</strong>
+  <%= @user.email %>
+
+  <strong><%= @user.first_name %>'s Boards</strong>
+  <% @boards.each do |item| %>
+  	<%= item.name %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

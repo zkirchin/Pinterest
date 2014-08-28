@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  root to: 'static_pages#home'
+
+  devise_for :users, :controllers => {:registrations => "registrations" } 
+
   delete '/pins' => 'pins#delete_all'
 
   delete '/users' => 'users#delete_all'
@@ -14,7 +18,7 @@ Rails.application.routes.draw do
 
   get '/new_temp' => 'pins#new_temp'
 
-  root to: 'pins#index'
+  
 
   resources :pins
 
